@@ -43,9 +43,9 @@ class Inner extends Component {
           <Text style={styles.instructions}>Points: {Screen.width}*{Screen.height}</Text>
           <Text style={styles.instructions}>Resolution: {Screen.width * Ratio}*{Screen.height * Ratio}</Text>
         </View>
-        <View>
+        <SafeAreaView>
           <Text style={styles.welcome}>BOTTOM</Text>
-        </View>
+        </SafeAreaView>
       </View>
     )
   }
