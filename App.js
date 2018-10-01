@@ -10,13 +10,21 @@ import {
   Button,
   StyleSheet,
   Text,
-  View
+  View,
+  Dimensions,
+  PixelRatio
 } from 'react-native'
 
 import {
   SafeAreaView,
   createStackNavigator
 } from 'react-navigation'
+
+const Screen = {
+  width: Dimensions.get('window').width,
+  height: Dimensions.get('window').height
+}
+const Ratio = PixelRatio.get()
 
 class Inner extends Component {
   static navigationOptions = {
@@ -31,6 +39,9 @@ class Inner extends Component {
         </View>
         <View>
           <Text style={styles.welcome}>Welcome to React Native!</Text>
+          <Text style={styles.instructions}>Pixel Ratio: {Ratio}</Text>
+          <Text style={styles.instructions}>Points: {Screen.width}*{Screen.height}</Text>
+          <Text style={styles.instructions}>Resolution: {Screen.width * Ratio}*{Screen.height * Ratio}</Text>
         </View>
         <View>
           <Text style={styles.welcome}>BOTTOM</Text>
